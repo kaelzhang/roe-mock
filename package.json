@@ -1,7 +1,7 @@
 {
   "name": "roe-mock",
   "version": "1.0.0",
-  "description": "roe-mock",
+  "description": "Mock of roe server for testing",
   "main": "src/index.js",
   "scripts": {
     "test": "nyc ava --timeout=10s",
@@ -17,7 +17,10 @@
     "url": "git://github.com/kaelzhang/roe-mock.git"
   },
   "keywords": [
-    "roe-mock"
+    "roe-mock",
+    "roe",
+    "testing",
+    "mocking"
   ],
   "engines": {
     "node": ">= 6"
@@ -33,9 +36,16 @@
   "devDependencies": {
     "ava": "^1.2.1",
     "codecov": "^3.2.0",
-    "nyc": "^13.3.0",
+    "eslint": "^5.14.0",
     "eslint-config-ostai": "^1.1.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint": "^5.14.0"
+    "nyc": "^13.3.0",
+    "roe": "^1.1.0"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "roe-scripts": "^1.0.0",
+    "supertest": "^4.0.2",
+    "tmp-promise": "^1.0.5"
   }
 }

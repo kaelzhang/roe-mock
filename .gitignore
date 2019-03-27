@@ -1,6 +1,10 @@
 # babel dist
 /lib
 
+# next
+.next
+dest
+
 # Numerous always-ignore extensions
 *.bak
 *.patch

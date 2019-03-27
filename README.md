@@ -15,7 +15,7 @@
 
 # roe-mock
 
-<!-- description -->
+Mock of roe server for testing
 
 ## Install
 
@@ -26,7 +26,15 @@ $ npm i roe-mock
 ## Usage
 
 ```js
-import roe_mock from 'roe-mock'
+const path = require('path')
+const create = require('roe-mock')
+
+const baseDir = path.join(__dirname, 'fixtures', 'myApp')
+const mock = await create(baseDir)
+
+// Write test cases as well as supertest
+await mock.get('/foo/bar')
+.expect(200)
 ```
 
 ## License
