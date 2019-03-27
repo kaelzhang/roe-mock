@@ -1,6 +1,6 @@
 {
   "name": "roe-mock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mock of roe server for testing",
   "main": "src/index.js",
   "scripts": {
@@ -34,18 +34,18 @@
     "url": "https://github.com/kaelzhang/roe-mock/issues"
   },
   "devDependencies": {
-    "ava": "^1.2.1",
+    "ava": "^1.4.0",
     "codecov": "^3.2.0",
-    "eslint": "^5.14.0",
-    "eslint-config-ostai": "^1.1.0",
-    "eslint-plugin-import": "^2.13.0",
+    "eslint": "^5.15.3",
+    "eslint-config-ostai": "^3.0.0",
+    "eslint-plugin-import": "^2.16.0",
     "get-port": "^4.2.0",
     "nyc": "^13.3.0",
-    "roe": "^1.1.0"
+    "roe": "^1.1.2"
   },
   "dependencies": {
     "fs-extra": "^7.0.1",
-    "roe-scripts": "^1.0.0",
+    "roe-scripts": "^1.0.1",
     "supertest": "^4.0.2",
     "tmp-promise": "^1.0.5"
   }
