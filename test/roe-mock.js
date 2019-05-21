@@ -1,8 +1,9 @@
 const path = require('path')
 const test = require('ava')
 const fs = require('fs-extra')
-const create = require('../src')
 const getPort = require('get-port')
+
+const create = require('../src')
 
 const fixture = (...args) => path.join(__dirname, 'fixtures', ...args)
 
@@ -10,7 +11,7 @@ test.before(async () => {
   try {
     await fs.remove(fixture('.next'))
   } catch (err) {
-
+    //
   }
 })
 

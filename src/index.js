@@ -1,16 +1,20 @@
-const {Server} = require('roe-scripts')
 const tmp = require('tmp-promise')
 const supertest = require('supertest')
 const fs = require('fs-extra')
+const createNext = require('next')
+const build = require('next/dist/build')
+const {Roe} = require('roe')
 
 class Mock {
   constructor (cwd, {
     dev = true,
-    copy = false
+    copy = false,
+    conf = {}
   } = {}) {
     this._cwd = cwd
     this._dev = dev
     this._copy = copy
+    this._conf = conf
   }
 
   async temp () {
@@ -23,15 +27,31 @@ class Mock {
   }
 
   async ready () {
-    this._server = new Server({
-      cwd: this._copy
-        ? await this.temp()
-        : this._cwd,
+    const cwd = this._copy
+      ? await this.temp()
+      : this._cwd
+
+    if (!this._dev) {
+      await build(cwd, this._conf)
+    }
+
+    const next = createNext({
+      dir: cwd,
+      conf: this._conf,
       dev: this._dev
     })
 
+    await next.prepare()
+
+    this._server = new Roe({
+      baseDir: cwd,
+      extends: {
+        next
+      }
+    })
+
     await this._server.ready()
-    this._request = supertest(this._server.app.callback())
+    this._request = supertest(this._server.callback())
   }
 
   get request () {

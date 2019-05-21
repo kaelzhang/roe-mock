@@ -1,11 +1,11 @@
 {
   "name": "roe-mock",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Mock of roe server for testing",
   "main": "src/index.js",
   "scripts": {
-    "test": "nyc ava --timeout=10s",
-    "test-no-report": "NODE_DEBUG=roe-mock nyc ava --timeout=10s --verbose",
+    "test": "nyc ava --timeout=10s --verbose",
+    "test:dev": "NODE_DEBUG=roe-mock nyc ava --timeout=10s --verbose",
     "lint": "eslint .",
     "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
@@ -41,12 +41,20 @@
     "eslint-plugin-import": "^2.16.0",
     "get-port": "^4.2.0",
     "nyc": "^13.3.0",
-    "roe": "^1.1.2"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "next": "^8.1.0",
+    "roe": "^2.0.0"
   },
   "dependencies": {
     "fs-extra": "^7.0.1",
-    "roe-scripts": "^1.0.1",
     "supertest": "^4.0.2",
     "tmp-promise": "^1.0.5"
+  },
+  "peerDependencies": {
+    "next": "^8.1.0",
+    "roe": "^2.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
