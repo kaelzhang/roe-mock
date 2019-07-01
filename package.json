@@ -1,6 +1,6 @@
 {
   "name": "roe-mock",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Mock of roe server for testing",
   "main": "src/index.js",
   "scripts": {
@@ -26,7 +26,10 @@
     "node": ">= 6"
   },
   "ava": {
-    "babel": false
+    "babel": false,
+    "files": [
+      "test/*.js"
+    ]
   },
   "author": "kaelzhang",
   "license": "MIT",

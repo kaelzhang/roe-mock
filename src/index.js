@@ -7,12 +7,10 @@ const {Roe} = require('roe')
 
 class Mock {
   constructor (cwd, {
-    dev = true,
     copy = false,
     conf = {}
   } = {}) {
     this._cwd = cwd
-    this._dev = dev
     this._copy = copy
     this._conf = conf
   }
@@ -31,14 +29,10 @@ class Mock {
       ? await this.temp()
       : this._cwd
 
-    if (!this._dev) {
-      await build(cwd, this._conf)
-    }
-
     const next = createNext({
       dir: cwd,
       conf: this._conf,
-      dev: this._dev
+      dev: true
     })
 
     await next.prepare()
