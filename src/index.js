@@ -2,7 +2,6 @@ const tmp = require('tmp-promise')
 const supertest = require('supertest')
 const fs = require('fs-extra')
 const createNext = require('next')
-const build = require('next/dist/build')
 const {Roe} = require('roe')
 
 class Mock {
