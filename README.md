@@ -42,7 +42,6 @@ await mock.get('/foo/bar')
 - **baseDir** `path` base directory contains the roe app
 - **options?** `Object`
   - **copy?** `boolean=false` if true, roe-mock will copy things inside `baseDir` to an temp dir before creating the application
-  - **dev?** `boolean=true` start on dev mode
 
 Creates an [`supertest`](https://npmjs.org/package/supertest) instance with an additional method `listen(port)` to start the server:
 
